@@ -1,0 +1,13 @@
+.idea/.gitignore
+.idea/artifacts
+.idea/compiler.xml
+.idea/jarRepositories.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/*.xml
+*.iml
+# Except the following (these override the above exclusions)
+!.idea/runConfigurations
+
+
+**/target/**
