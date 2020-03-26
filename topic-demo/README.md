@@ -1,15 +1,15 @@
-
+TOPIC DEMO
+==========
 
 Consumer
 ========
 
 # Steps
 
-1. Define the consumer by implementing MessageListener
+1. Define the consumer by implementing @JmsListener
 1. Define the properties used by consumer
-1. Define DefaultMessageListenerContainer which manages the listener and connection to MQ
-1. Define a JMSTemplate for publishing
-
+1. Define DefaultMessageListenerContainer which manages the listener and connection to MQ (see MessagingAnnotationConfig)
+1. Define a JMSTemplate for publishing (see MessagingConfig)
 
 UI
 ==
@@ -61,16 +61,3 @@ hawtio.authenticationEnabled = false
 1. Login to HawtIo console
 1. Click on JMX
 1. Search 'org.apache.activemq.artemis'
-
-## Publishing
-
-1. Select the queue
-1. In Operations tab, select sendMessage
-
-|Parameter|Description|Example|
-|---------|-----------|-------|
-|headers |JSON format; JMS headers|{"h1":"v1"}|
-|type| JMS message type; (3) for TextMessage|3|
-|body| JMS payload||
-|durable| true if durable||
-
