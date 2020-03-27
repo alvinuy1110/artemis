@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="topic-demo [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="consumer [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -18,7 +18,7 @@
             <map />
           </option>
           <option name="resolveToWorkspace" value="false" />
-          <option name="workingDirPath" value="$PROJECT_DIR$/topic-demo" />
+          <option name="workingDirPath" value="$PROJECT_DIR$/consumer" />
         </MavenRunnerParameters>
       </option>
     </MavenSettings>

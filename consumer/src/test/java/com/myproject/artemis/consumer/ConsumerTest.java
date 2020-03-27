@@ -1,6 +1,6 @@
 package com.myproject.artemis.consumer;
 
-import com.myproject.artemis.ArtemisQueueApp;
+import com.myproject.artemis.ArtemisConsumerApp;
 import com.myproject.artemis.service.MessagingService;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ import javax.jms.Message;
 import static com.myproject.artemis.service.MessagingConstants.JMS_HEADER_CUSTOM_MSG_ID;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest(classes = {ArtemisQueueApp.class}, webEnvironment = SpringBootTest.WebEnvironment.NONE
+@SpringBootTest(classes = {ArtemisConsumerApp.class}, webEnvironment = SpringBootTest.WebEnvironment.NONE
         , properties = {
 }
 )

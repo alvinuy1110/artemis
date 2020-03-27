@@ -19,8 +19,7 @@
 
     <modules>
         <module>common</module>
-        <module>queue-demo</module>
-        <module>topic-demo</module>
+        <module>consumer</module>
     </modules>
 
 
