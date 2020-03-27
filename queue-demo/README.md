@@ -72,3 +72,12 @@ hawtio.authenticationEnabled = false
 |body| JMS payload||
 |durable| true if durable||
 
+
+# Features
+
+* Simple publish-consume (see ConsumerTest)
+* Delayed message (see DelayedMessageTest)
+* Browse message (see BrowseMessageTest)
+* Priority message (see PriorityMessageTest)
+* Selector message (see SelectorMessageTest)
+* Message grouping (see MessageGroupingTest)

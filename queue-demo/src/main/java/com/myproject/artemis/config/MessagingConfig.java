@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.connection.JmsTransactionManager;
@@ -21,6 +22,7 @@ import javax.jms.Session;
 
 @Configuration
 @Slf4j
+@EnableConfigurationProperties
 public class MessagingConfig {
 
 
@@ -57,27 +59,6 @@ public class MessagingConfig {
     @Bean(value = "jmsTransactionManager")
     public PlatformTransactionManager jmsTransactionManager() {
         return new JmsTransactionManager(connectionFactory);
-    }
-
-    @Bean("testQueueListenerContainer")
-    public DefaultMessageListenerContainer testQueueListenerContainer(
-            @Qualifier(value = "testQueueMessagingConfig") MessagingConfigProperties messagingConfigProperties,
-            @Qualifier("testQueueListener") MessageListener messageListener,
-            @Qualifier("jmsTransactionManager") PlatformTransactionManager transactionManager) throws JMSException {
-
-        DefaultMessageListenerContainer defaultMessageListenerContainer =
-                new DefaultMessageListenerContainer();
-        defaultMessageListenerContainer.setConnectionFactory(connectionFactory);
-        defaultMessageListenerContainer.setDestinationName(messagingConfigProperties.getDefaultDestinationName());
-        defaultMessageListenerContainer.setMessageListener(messageListener);
-//        defaultMessageListenerContainer.setErrorHandler(new JmsErrorHandler());
-        defaultMessageListenerContainer.setConcurrentConsumers(messagingConfigProperties.getConcurrentConsumers());
-        defaultMessageListenerContainer.setMaxConcurrentConsumers(messagingConfigProperties.getMaxConcurrentConsumers());
-        defaultMessageListenerContainer.setSessionTransacted(true);
-        defaultMessageListenerContainer.setPubSubDomain(false);
-        defaultMessageListenerContainer.setTransactionManager(transactionManager);
-
-        return defaultMessageListenerContainer;
     }
 
 }

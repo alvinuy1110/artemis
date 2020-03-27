@@ -11,6 +11,11 @@ Dependencies
 * Spring Boot 2.2.2
 * Active MQ Artemis 2.10.1
 
+Modules
+=======
+
+* [Queue Demo](./queue-demo/README.md)
+* [Topic Demo](./topic-demo/README.md)
 
 References
 ==========
