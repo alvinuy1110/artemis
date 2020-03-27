@@ -1,7 +1,5 @@
-
-
-Consumer
-========
+QUEUE DEMO
+==========
 
 # Steps
 

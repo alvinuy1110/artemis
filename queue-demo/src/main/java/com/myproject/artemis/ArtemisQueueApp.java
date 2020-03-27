@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class ArtemisConsumerApp {
+public class ArtemisQueueApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(ArtemisConsumerApp.class, args);
+        SpringApplication.run(ArtemisQueueApp.class, args);
     }
 
 }
