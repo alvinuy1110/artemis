@@ -72,6 +72,18 @@ hawtio.authenticationEnabled = false
 |body| JMS payload||
 |durable| true if durable||
 
+### Send test message via HTTP
+
+Send a POST to 'http://localhost:10080/sendToQueue'
+Example: Unix
+```
+curl -kv -X POST -H "Application/json" --data '{"headers":{"artemis_custom_hdr":"testId","priority":1},"message":"this is a test message"}' \ http://localhost:10080/sendToQueue
+```
+
+Example: Windows
+```
+curl -kv -X POST -H "Content-Type: application/json" --data "{\"headers\":{\"artemis_custom_hdr\":\"testId\",\"priority\":1},\"message\":\"this is a test message\"}" \ http://localhost:10080/sendToQueue
+```
 
 # Features
 
@@ -81,3 +93,21 @@ hawtio.authenticationEnabled = false
 * Priority message (see PriorityMessageTest)
 * Selector message (see SelectorMessageTest)
 * Message grouping (see MessageGroupingTest)
+
+
+# Troubleshooting
+
+## Cause: AMQ229017: Queue testQueue does not exist
+As per https://access.redhat.com/solutions/4236881, queues/ topic does not support dynamic creation.  
+
+Also need to set the flag, to prevent from being destroyed.
+```
+<auto-delete-queues>false</auto-delete-queues> 
+
+or toggle 'Purge when no consumers'
+```
+
+Note: 
+In Spring, this error is actually ignored and dynamic creation actually happens,  The destination is detroyed afterwards.
+
+
