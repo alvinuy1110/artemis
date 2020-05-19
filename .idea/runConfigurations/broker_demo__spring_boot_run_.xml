@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="queue-demo-dev [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="broker-demo [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -11,7 +11,6 @@
           <option name="goals">
             <list>
               <option value="spring-boot:run" />
-              <option value="-Dspring-boot.run.profiles=dev" />
             </list>
           </option>
           <option name="pomFileName" />
@@ -19,7 +18,7 @@
             <map />
           </option>
           <option name="resolveToWorkspace" value="false" />
-          <option name="workingDirPath" value="$PROJECT_DIR$/queue-demo" />
+          <option name="workingDirPath" value="$PROJECT_DIR$/artemis-broker" />
         </MavenRunnerParameters>
       </option>
     </MavenSettings>

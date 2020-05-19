@@ -21,6 +21,7 @@
         <module>common</module>
         <module>queue-demo</module>
         <module>topic-demo</module>
+        <module>artemis-broker</module>
     </modules>
 
 

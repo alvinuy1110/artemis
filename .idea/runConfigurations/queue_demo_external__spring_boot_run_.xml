@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="queue-demo-dev [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
+  <configuration default="false" name="queue-demo-external [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven">
     <MavenSettings>
       <option name="myGeneralSettings" />
       <option name="myRunnerSettings" />
@@ -11,7 +11,7 @@
           <option name="goals">
             <list>
               <option value="spring-boot:run" />
-              <option value="-Dspring-boot.run.profiles=dev" />
+              <option value="-Dspring-boot.run.profiles=external" />
             </list>
           </option>
           <option name="pomFileName" />

@@ -12,3 +12,7 @@
 
 
 **/target/**
+
+## Broker data
+/artemis-broker/data/**
+
