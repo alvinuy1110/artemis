@@ -12,6 +12,7 @@ import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
 import static com.myproject.artemis.service.MessagingConstants.JMS_HEADER_CUSTOM_MSG_ID;
+import static com.myproject.artemis.service.MessagingConstants.JMS_HEADER_SHOULD_FAIL;
 
 @Slf4j
 public class MyListener implements MessageListener {
@@ -26,6 +27,13 @@ public class MyListener implements MessageListener {
             log.info("Message received");
 
             JmsMessageUtil.debugProperties(message);;
+
+            boolean shouldFail = message.getBooleanProperty(JMS_HEADER_SHOULD_FAIL);
+            log.info("shouldFail: {}", shouldFail);
+            if (shouldFail) {
+
+                throw new RuntimeException("Failure forced");
+            }
 
             String customMsgId = message.getStringProperty(JMS_HEADER_CUSTOM_MSG_ID);
             if (customMsgId!=null) {
